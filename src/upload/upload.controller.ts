@@ -23,6 +23,10 @@ export class UploadController {
         private FolderService: FolderService,
         private UserService: UserService,
     ) {}
+    // 유저는 자신의 특정 폴더에 업로드된 사진을 저장할 수 있다.
+    // 1. 사진은 어딘가의 이미지 서버에 저장이 되고 이에 대한 URL이 저장된다고 가정한다.(실제 이미지 업로드 기능은 필요 없음)
+    // 2. N개의 사진을 동시에 저장할 수 있다.
+
     @Post('uploadPhoto')
     async uploadPhoto(@Req() req, @Body() body) {
         const { FOLDERNAME, USERNAME, PHOTONAME } = body;
@@ -41,14 +45,27 @@ export class UploadController {
 
         const splitPhoto = PHOTONAME.split(',');
 
-        _.forEach(splitPhoto, (element) => {
-            this.UploadService.uploadPhoto(
+        if (splitPhoto.length > 1) {
+            _.forEach(splitPhoto, (element) => {
+                const result = this.UploadService.uploadPhoto(
+                    folderData.fld_idx,
+                    userData.id,
+                    '/upload/files/' + folderData.fld_name + '/' + element,
+                );
+
+                this.FolderService.increaseCount(folderData.fld_idx);
+                return 'success';
+            });
+        } else {
+            const result = await this.UploadService.uploadPhoto(
                 folderData.fld_idx,
                 userData.id,
-                '/upload/files/' + folderData.fld_name + '/' + element,
+                '/upload/files/' + folderData.fld_name + '/' + PHOTONAME,
             );
-        });
 
-        return 'success';
+            await this.FolderService.increaseCount(folderData.fld_idx);
+
+            return result;
+        }
     }
 }

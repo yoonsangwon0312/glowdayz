@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import _ from 'lodash';
 import { ServiceCore } from 'src/_common/core/service.core';
 
 @Injectable()
@@ -30,6 +31,44 @@ export class FolderService extends ServiceCore {
         const result = await this.prisma.fOLDER.findMany({
             where: {
                 fld_user_idx: fld_user_idx,
+            },
+        });
+
+        return result;
+    }
+
+    async getFolderImageCount(fld_idx: number): Promise<number> {
+        const result = await this.prisma.iMAGE.count({
+            where: {
+                img_fld_idx: fld_idx,
+            },
+        });
+
+        return result;
+    }
+
+    async increaseCount(fld_idx: number) {
+        const count = await this.getFolderImageCount(fld_idx);
+
+        const result = await this.prisma.fOLDER.update({
+            where: {
+                fld_idx: fld_idx,
+            },
+            data: {
+                fld_img_count: count,
+            },
+        });
+
+        return result;
+    }
+
+    async getImageListByFolderIdx(fld_idx: number) {
+        const result = await this.prisma.iMAGE.findMany({
+            orderBy: {
+                img_upload_date: 'desc',
+            },
+            where: {
+                img_fld_idx: fld_idx,
             },
         });
 

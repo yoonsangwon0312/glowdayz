@@ -12,6 +12,7 @@ model FOLDER {
   fld_name                        String   @unique @db.VarChar(255)
   fld_created_et                  DateTime @db.DateTime(0)
   fld_user_idx                    Int
+  fld_img_count                   Int      @default(0)
   USER                            USER     @relation(fields: [fld_user_idx], references: [id])
   IMAGE_FOLDERToIMAGE_img_fld_idx IMAGE[]  @relation("FOLDERToIMAGE_img_fld_idx")
   IMAGE_FOLDERToIMAGE_img_usr_idx IMAGE[]  @relation("FOLDERToIMAGE_img_usr_idx")
@@ -37,5 +38,6 @@ model USER {
   NAME       String    @unique @db.VarChar(255)
   created_at DateTime  @default(now()) @db.DateTime(0)
   updated_at DateTime? @default(now()) @db.DateTime(0)
+  usr_point  Int       @default(0)
   FOLDER     FOLDER[]
 }

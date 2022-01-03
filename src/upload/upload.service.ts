@@ -8,7 +8,6 @@ import { ServiceCore } from 'src/_common/core/service.core';
 export class UploadService extends ServiceCore {
     // ServiceCore를 불러와 prisma를 사용
     async uploadPhoto(FOLDERIDX: number, USERIDX: number, URL: string) {
-        console.log(URL);
         const result = await this.prisma.iMAGE.create({
             data: {
                 img_fld_idx: FOLDERIDX,
