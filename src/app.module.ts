@@ -9,6 +9,8 @@ import { IncomingMessage } from 'http';
 import { ConfigModule } from '@nestjs/config';
 import { TestModule } from './test/test.module';
 import { UserModule } from './user/user.module';
+import { FolderModule } from './folder/folder.module';
+import { GlobalModule } from './global/global.module';
 
 @Module({
     imports: [
@@ -35,6 +37,8 @@ import { UserModule } from './user/user.module';
         }),
         TestModule,
         UserModule,
+        FolderModule,
+        GlobalModule,
     ],
     controllers: [],
     providers: [],

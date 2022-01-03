@@ -19,4 +19,15 @@ export class UserService extends ServiceCore {
 
         return result;
     }
+
+    // 이름을 가지고 유저정보 가져오기
+    async getUserByName(NAME: string) {
+        const result = await this.prisma.uSER.findUnique({
+            where: {
+                NAME: NAME,
+            },
+        });
+
+        return result;
+    }
 }

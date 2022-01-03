@@ -7,9 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model FOLDER {
+  fld_idx        Int      @id @default(autoincrement())
+  fld_name       String   @db.VarChar(255)
+  fld_created_et DateTime @db.DateTime(0)
+  fld_user_idx   Int
+  USER           USER     @relation(fields: [fld_user_idx], references: [id])
+
+  @@index([fld_user_idx], name: "user_idx_foreignKeys")
+}
+
+model IMAGE {
+  img_idx         Int      @id @default(autoincrement())
+  img_fld_idx     Int
+  img_upload_date DateTime @db.DateTime(0)
+}
+
 model USER {
   id         Int       @id @default(autoincrement())
-  NAME       String    @db.VarChar(255)
+  NAME       String    @unique @db.VarChar(255)
   created_at DateTime  @default(now()) @db.DateTime(0)
   updated_at DateTime? @default(now()) @db.DateTime(0)
+  FOLDER     FOLDER[]
 }
