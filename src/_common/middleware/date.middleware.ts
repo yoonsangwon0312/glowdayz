@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { Prisma } from '@prisma/client';
 import _ from 'lodash';
 import moment from 'moment';
-
+// lightsail database timezone 설정 이슈로 date middleware 생성
 export async function DateMiddleware<T = any>(
     params: Prisma.MiddlewareParams,
     next: (params: Prisma.MiddlewareParams) => Promise<T>,
