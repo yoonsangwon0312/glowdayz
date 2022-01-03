@@ -1,7 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
-import moment from 'moment';
-import { stringify } from 'querystring';
 import { ServiceCore } from 'src/_common/core/service.core';
 
 @Injectable()
@@ -13,6 +10,26 @@ export class FolderService extends ServiceCore {
                 fld_name: fld_name,
                 fld_user_idx: user_idx,
                 fld_created_et: new Date(),
+            },
+        });
+
+        return result;
+    }
+
+    async getFolderByName(fld_name: string) {
+        const result = await this.prisma.fOLDER.findUnique({
+            where: {
+                fld_name: fld_name,
+            },
+        });
+
+        return result;
+    }
+
+    async getFolderList(fld_user_idx: number) {
+        const result = await this.prisma.fOLDER.findMany({
+            where: {
+                fld_user_idx: fld_user_idx,
             },
         });
 

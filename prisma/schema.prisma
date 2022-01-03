@@ -8,19 +8,28 @@ datasource db {
 }
 
 model FOLDER {
-  fld_idx        Int      @id @default(autoincrement())
-  fld_name       String   @db.VarChar(255)
-  fld_created_et DateTime @db.DateTime(0)
-  fld_user_idx   Int
-  USER           USER     @relation(fields: [fld_user_idx], references: [id])
+  fld_idx                         Int      @id @default(autoincrement())
+  fld_name                        String   @unique @db.VarChar(255)
+  fld_created_et                  DateTime @db.DateTime(0)
+  fld_user_idx                    Int
+  USER                            USER     @relation(fields: [fld_user_idx], references: [id])
+  IMAGE_FOLDERToIMAGE_img_fld_idx IMAGE[]  @relation("FOLDERToIMAGE_img_fld_idx")
+  IMAGE_FOLDERToIMAGE_img_usr_idx IMAGE[]  @relation("FOLDERToIMAGE_img_usr_idx")
 
   @@index([fld_user_idx], name: "user_idx_foreignKeys")
 }
 
 model IMAGE {
-  img_idx         Int      @id @default(autoincrement())
-  img_fld_idx     Int
-  img_upload_date DateTime @db.DateTime(0)
+  img_idx                          Int      @id @unique @default(autoincrement())
+  img_fld_idx                      Int
+  img_usr_idx                      Int
+  img_url                          String   @db.VarChar(255)
+  img_upload_date                  DateTime @db.DateTime(0)
+  FOLDER_FOLDERToIMAGE_img_fld_idx FOLDER   @relation("FOLDERToIMAGE_img_fld_idx", fields: [img_fld_idx], references: [fld_idx])
+  FOLDER_FOLDERToIMAGE_img_usr_idx FOLDER   @relation("FOLDERToIMAGE_img_usr_idx", fields: [img_usr_idx], references: [fld_user_idx])
+
+  @@index([img_fld_idx], name: "fld_idx_foreignKeys")
+  @@index([img_usr_idx], name: "usr_idx_foreignKeys")
 }
 
 model USER {

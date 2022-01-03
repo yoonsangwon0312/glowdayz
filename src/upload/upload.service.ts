@@ -7,5 +7,17 @@ import { ServiceCore } from 'src/_common/core/service.core';
 @Injectable()
 export class UploadService extends ServiceCore {
     // ServiceCore를 불러와 prisma를 사용
-    async uploadDB() {}
+    async uploadPhoto(FOLDERIDX: number, USERIDX: number, URL: string) {
+        console.log(URL);
+        const result = await this.prisma.iMAGE.create({
+            data: {
+                img_fld_idx: FOLDERIDX,
+                img_usr_idx: USERIDX,
+                img_url: URL,
+                img_upload_date: new Date(),
+            },
+        });
+
+        return result;
+    }
 }
