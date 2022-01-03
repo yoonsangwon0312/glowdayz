@@ -18,13 +18,15 @@ export const validationErrorCode = {
     equals: {
         code: 'V0003',
         message: '입력한 값이 설정된 값과 일치하지 않습니다.',
-        solutionMessage: '해당 유효성 검사를 사용하고 있는 DTO의 조건(===)에 맞게 입력해 주시길 바랍니다.',
+        solutionMessage:
+            '해당 유효성 검사를 사용하고 있는 DTO의 조건(===)에 맞게 입력해 주시길 바랍니다.',
         originDescription: 'Checks if value equals ("===") comparison.',
     },
     notEquals: {
         code: 'V0004',
         message: '입력한 값과 설정된 값과 일치하지 않아야 합니다.',
-        solutionMessage: '해당 유효성 검사를 사용하고 있는 DTO의 조건(!==)에 맞게 입력해 주시길 바랍니다.',
+        solutionMessage:
+            '해당 유효성 검사를 사용하고 있는 DTO의 조건(!==)에 맞게 입력해 주시길 바랍니다.',
         originDescription: 'Checks if value not equal ("!==") comparison',
     },
     isEmpty: {
@@ -42,13 +44,15 @@ export const validationErrorCode = {
     isIn: {
         code: 'V0007',
         message: '입력한 값이 설정된 값에 포함되어 있지 않습니다.',
-        solutionMessage: '해당 유효성 검사를 사용하고 있는 DTO의 조건(array)에 맞는 값을 입력해 주시길 바랍니다.',
+        solutionMessage:
+            '해당 유효성 검사를 사용하고 있는 DTO의 조건(array)에 맞는 값을 입력해 주시길 바랍니다.',
         originDescription: 'Checks if value is in a array of allowed values.',
     },
     isNotIn: {
         code: 'V0008',
         message: '입력한 값이 설정된 값에 포함되어 있지 않아야 합니다.',
-        solutionMessage: '해당 유효성 검사를 사용하고 있는 DTO의 조건(array)에 맞지 않는 값을 입력해 주시길 바랍니다.',
+        solutionMessage:
+            '해당 유효성 검사를 사용하고 있는 DTO의 조건(array)에 맞지 않는 값을 입력해 주시길 바랍니다.',
         originDescription: 'Checks if value is not in a array of disallowed values.',
     },
     //===== 유형 검증 데코레이터(Type validation decorators) =====//
@@ -111,20 +115,23 @@ export const validationErrorCode = {
     min: {
         code: 'V2004',
         message: '입력된 값이 설정된 값보다 작습니다.',
-        solutionMessage: '입력값이 숫자이며, 해당 유효성 검사를 사용하는 DTO의 조건(number) 보다 커야 합니다.',
+        solutionMessage:
+            '입력값이 숫자이며, 해당 유효성 검사를 사용하는 DTO의 조건(number) 보다 커야 합니다.',
         originDescription: 'Checks if the given number is greater than or equal to given number.',
     },
     max: {
         code: 'V2005',
         message: '입력된 값이 설정된 값보다 큽니다.',
-        solutionMessage: '입력값이 숫자이며, 해당 유효성 검사를 사용하는 DTO의 조건(number) 보다 작아야 합니다.',
+        solutionMessage:
+            '입력값이 숫자이며, 해당 유효성 검사를 사용하는 DTO의 조건(number) 보다 작아야 합니다.',
         originDescription: 'Checks if the given number is less than or equal to given number.',
     },
     //===== 날짜 유효성 검사 데코레이터(Date validation decorators) =====//
     minDate: {
         code: 'V3001',
         message: '입력된 값이 설정된 값보다 작습니다.',
-        solutionMessage: '입력값이 날짜(Date)타입이며, 해당 유효성 검사를 사용하는 DTO의 조건(Date) 보다 커야 합니다.',
+        solutionMessage:
+            '입력값이 날짜(Date)타입이며, 해당 유효성 검사를 사용하는 DTO의 조건(Date) 보다 커야 합니다.',
         originDescription: "Checks if the value is a date that's after the specified date.",
     },
     maxDate: {
@@ -177,7 +184,8 @@ export const validationErrorCode = {
     isAlphanumeric: {
         code: 'V5004',
         message: '알파벳과 숫자만 입력하십시요',
-        solutionMessage: '입력값이 문자열(string)타입이며, 알파벳(a-zA-z)과 숫자(number)만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 알파벳(a-zA-z)과 숫자(number)만 입력할 수 있습니다.',
         originDescription: 'Checks if the string contains only letters and numbers.',
     },
     isDecimal: {
@@ -190,43 +198,50 @@ export const validationErrorCode = {
     isAscii: {
         code: 'V5006',
         message: '아스키 문자에 포합되지 않은 문자가 입력되었습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, ASCII 문자에 포함된 문자만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, ASCII 문자에 포함된 문자만 입력할 수 있습니다.',
         originDescription: 'Checks if the string contains ASCII chars only.',
     },
     isBase32: {
         code: 'V5007',
         message: 'base32로 인코딩 되지 않았습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, base32로 인코딩된 문자열만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, base32로 인코딩된 문자열만 입력할 수 있습니다.',
         originDescription: 'Checks if a string is base32 encoded.',
     },
     isBase64: {
         code: 'V5008',
         message: 'base364로 인코딩 되지 않았습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, base364로 인코딩된 문자열만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, base364로 인코딩된 문자열만 입력할 수 있습니다.',
         originDescription: 'Checks if a string is base64 encoded.',
     },
     isIBAN: {
         code: 'V5009',
         message: '국제 은행 계좌 번호(IBAN)가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, IBAN(국제 은행 계좌 번호)만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, IBAN(국제 은행 계좌 번호)만 입력할 수 있습니다.',
         originDescription: 'Checks if a string is a IBAN (International Bank Account Number).',
     },
     isBIC: {
         code: 'V5010',
         message: '은행 식별 코드(BIC) 또는 SWIFT 코드가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, BIC(은행 식별 코드) 또는 SWIFT 코드만 입력할 수 있습니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, BIC(은행 식별 코드) 또는 SWIFT 코드만 입력할 수 있습니다.',
         originDescription: 'Checks if a string is a BIC (Bank Identification Code) or SWIFT code.',
     },
     isByteLength: {
         code: 'V5011',
         message: 'Byte 크기가 설정치를 제한을 벗어났습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, Byte크기가 설정값의 min, max 옵션 제한을 맞춰야 합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, Byte크기가 설정값의 min, max 옵션 제한을 맞춰야 합니다.',
         originDescription: "Checks if the string's length (in bytes) falls in a range.",
     },
     isCreditCard: {
         code: 'V5012',
         message: '신용카드 번호가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 신용카드 형태의 문자열만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 신용카드 형태의 문자열만 입력 가능합니다.',
         originDescription: 'Checks if the string is a credit card.',
     },
     isCurrency: {
@@ -265,7 +280,8 @@ export const validationErrorCode = {
         code: 'V5018',
         message: '정규화된 도메인 형식이 아닙니다.(예: domain.com)',
         solutionMessage: '입력값이 문자열(string)타입이며, 도메인 형식만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a fully qualified domain name (e.g. domain.com).',
+        originDescription:
+            'Checks if the string is a fully qualified domain name (e.g. domain.com).',
     },
     isFullWidth: {
         code: 'V5019',
@@ -281,21 +297,26 @@ export const validationErrorCode = {
     },
     isVariableWidth: {
         code: 'V5021',
-        message: '전각문자와 반각문자가 혼합되어야 합니다.(예: (O): 12 3a b c? !, (X): 1 2 3 a b c ? ! or 123abc?!)',
-        solutionMessage: '입력값이 문자열(string)타입이며, 전각문자와 반각문자가 포함된 값만 입력 가능합니다.',
+        message:
+            '전각문자와 반각문자가 혼합되어야 합니다.(예: (O): 12 3a b c? !, (X): 1 2 3 a b c ? ! or 123abc?!)',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 전각문자와 반각문자가 포함된 값만 입력 가능합니다.',
         originDescription: 'Checks if the string contains a mixture of full and half-width chars.',
     },
     isHexColor: {
         code: 'V5022',
         message: '16진수 색상이 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 색상(#[0-F] * 6) 형태만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 색상(#[0-F] * 6) 형태만 입력 가능합니다.',
         originDescription: 'Checks if the string is a hexadecimal color.',
     },
     isHSLColor: {
         code: 'V5023',
         message: "'HSL' 색상이 아닙니다.('CSS Colors Level 4'를 기준으로 합니다.)",
-        solutionMessage: '입력값이 문자열(string)타입이며, 색상(HSL) 형태만 입력 가능합니다.(CSS Color Level 4 기준)',
-        originDescription: "Checks if the string is an HSL color based on 'CSS Colors Level 4 specification.'",
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 색상(HSL) 형태만 입력 가능합니다.(CSS Color Level 4 기준)',
+        originDescription:
+            "Checks if the string is an HSL color based on 'CSS Colors Level 4 specification.'",
     },
     isRgbColor: {
         code: 'V5024',
@@ -312,8 +333,10 @@ export const validationErrorCode = {
     isPassportNumber: {
         code: 'V5026',
         message: '설정된 국가 코드와 관련된 유효한 여권 번호가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(국가코드(string))에 맞는 여권 번호만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid passport number relative to a specific country code.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(국가코드(string))에 맞는 여권 번호만 입력 가능합니다.',
+        originDescription:
+            'Checks if the string is a valid passport number relative to a specific country code.',
     },
     isPostalCode: {
         code: 'V5027',
@@ -342,7 +365,8 @@ export const validationErrorCode = {
     isIP: {
         code: 'V5031',
         message: "'IP4' 또는 'IP6' 번호가 아닙니다.",
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(4|6)에 맞는 IP타입만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(4|6)에 맞는 IP타입만 입력 가능합니다.',
         originDescription: 'Checks if the string is an IP (version 4 or 6).',
     },
     isPort: {
@@ -354,14 +378,16 @@ export const validationErrorCode = {
     isISBN: {
         code: 'V5033',
         message: '국제 표준 도서 번호(ISBN)가 아닙니다.(10 또는 13 버전을 기준으로 합니다.)',
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(10|13)에 맞는 ISBN번호만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(10|13)에 맞는 ISBN번호만 입력 가능합니다.',
         originDescription: 'Checks if the string is an ISBN (version 10 or 13).',
     },
     isEAN: {
         code: 'V5034',
         message: '유럽 물품 번호(EAN)가 아닙니다.',
         solutionMessage: '입력값이 문자열(string)타입이며, EAN번호만 입력 가능합니다.',
-        originDescription: 'Checks if the string is an if the string is an EAN (European Article Number).',
+        originDescription:
+            'Checks if the string is an if the string is an EAN (European Article Number).',
     },
     isISIN: {
         code: 'V5035',
@@ -393,7 +419,8 @@ export const validationErrorCode = {
         message: '객체 형태가 아닙니다.',
         solutionMessage:
             "입력값이 문자열(string)타입이며, 유효한 객체(Object) 형태만 입력 가능합니다. 또한 'null, function, array'가 들어간지 확인해 주세요.",
-        originDescription: 'Checks if the object is valid Object (null, functions, arrays will return false).',
+        originDescription:
+            'Checks if the object is valid Object (null, functions, arrays will return false).',
     },
     isNotEmptyObject: {
         code: 'V5040',
@@ -410,8 +437,10 @@ export const validationErrorCode = {
     isLatLong: {
         code: 'V5042',
         message: '유효한 위도, 경도 좌표가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 유효한 위도(0-90), 경도(0-360)만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid latitude-longitude coordinate in the format lat, long.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 유효한 위도(0-90), 경도(0-360)만 입력 가능합니다.',
+        originDescription:
+            'Checks if the string is a valid latitude-longitude coordinate in the format lat, long.',
     },
     isLatitude: {
         code: 'V5043',
@@ -435,14 +464,18 @@ export const validationErrorCode = {
     isISO31661Alpha2: {
         code: 'V5046',
         message: 'ISO 3166-1 alpha-2 공식 할당 국가 코드가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, ISO 3166-1 alpha-2 공식 할당 국가 코드만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid ISO 3166-1 alpha-2 officially assigned country code.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, ISO 3166-1 alpha-2 공식 할당 국가 코드만 입력 가능합니다.',
+        originDescription:
+            'Checks if the string is a valid ISO 3166-1 alpha-2 officially assigned country code.',
     },
     isISO31661Alpha3: {
         code: 'V5047',
         message: 'ISO 3166-1 alpha-3 공식 할당 국가 코드가 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, ISO 3166-1 alpha-3 공식 할당 국가 코드만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid ISO 3166-1 alpha-3 officially assigned country code.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, ISO 3166-1 alpha-3 공식 할당 국가 코드만 입력 가능합니다.',
+        originDescription:
+            'Checks if the string is a valid ISO 3166-1 alpha-3 officially assigned country code.',
     },
     isLocale: {
         code: 'V5048',
@@ -453,7 +486,8 @@ export const validationErrorCode = {
     isPhoneNumber: {
         code: 'V5049',
         message: 'locale(예:KR)타입이 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, libphonenumber-js에 등록된 휴대폰 번호만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, libphonenumber-js에 등록된 휴대폰 번호만 입력 가능합니다.',
         originDescription: 'Checks if the string is a valid phone numberusing libphonenumber-js.',
     },
     isMongoId: {
@@ -461,18 +495,21 @@ export const validationErrorCode = {
         message: 'MongoDB 아이디 형식이 아닙니다.',
         solutionMessage:
             '입력값이 문자열(string)타입이며, MongoDB ObjectId 형식(0-F)으로 인코딩된 표현만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid hex-encoded representation of a MongoDB ObjectId.',
+        originDescription:
+            'Checks if the string is a valid hex-encoded representation of a MongoDB ObjectId.',
     },
     isMultibyte: {
         code: 'V5051',
         message: '하나 이상의 멀티바이트가 포함되어야 합니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 멀티바이트가 포함된 문자열만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 멀티바이트가 포함된 문자열만 입력 가능합니다.',
         originDescription: 'Checks if the string contains one or more multibyte chars.',
     },
     IsSurrogatePair: {
         code: 'V5052',
         message: 'Surrogate Pair 문자가 포함되어 있지 않습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 숫자(소수[Float, Decimal] + 정수[Int])만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 숫자(소수[Float, Decimal] + 정수[Int])만 입력 가능합니다.',
         originDescription: 'Checks if the string contains any surrogate pairs chars.',
     },
     IsUrl: {
@@ -490,7 +527,8 @@ export const validationErrorCode = {
     IsUUID: {
         code: 'V5055',
         message: 'UUID 형식이 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(3|4|5|all)에 맞는 UUID 형식만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(3|4|5|all)에 맞는 UUID 형식만 입력 가능합니다.',
         originDescription: 'Checks if the string is a UUID (version 3, 4, 5 or all ).',
     },
     IsFirebasePushId: {
@@ -508,7 +546,8 @@ export const validationErrorCode = {
     length: {
         code: 'V5058',
         message: '입력된 값이 설정된 길이 범위를 벗어났습니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(min, max) 범위에 맞는 값만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(min, max) 범위에 맞는 값만 입력 가능합니다.',
         originDescription: "Checks if the string's length falls in a range.",
     },
     minLength: {
@@ -528,15 +567,18 @@ export const validationErrorCode = {
     matches: {
         code: 'V5061',
         message: '입력값이 설정된 패턴과 다릅니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 조건(정규식(RegExp))과 일치하는 값만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 조건(정규식(RegExp))과 일치하는 값만 입력 가능합니다.',
         originDescription:
             "Checks if string matches the pattern. Either matches('foo', /foo/i) or matches('foo', 'foo', 'i').",
     },
     IsMilitaryTime: {
         code: 'V5062',
         message: '입력값의 형태는 HH:MM 형식이어야 합니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, HH:MM 형식의 string값만 입력 가능합니다.',
-        originDescription: 'Checks if the string is a valid representation of military time in the format HH:MM.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, HH:MM 형식의 string값만 입력 가능합니다.',
+        originDescription:
+            'Checks if the string is a valid representation of military time in the format HH:MM.',
     },
     IsHash: {
         code: 'V5063',
@@ -573,7 +615,8 @@ export const validationErrorCode = {
     IsRFC3339: {
         code: 'V5068',
         message: 'RFC 3339 날짜 형식이 아닙니다.',
-        solutionMessage: '입력값이 문자열(string)타입이며, 유효한 RFC 3339 날짜 형식만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 문자열(string)타입이며, 유효한 RFC 3339 날짜 형식만 입력 가능합니다.',
         originDescription: 'Checks if the string is a valid RFC 3339 date.',
     },
     //===== 배열 유효성 검사 데코레이터(Array validation decorators) =====//
@@ -587,31 +630,37 @@ export const validationErrorCode = {
     arrayNotContains: {
         code: 'V6002',
         message: '입력한 값의 배열 중 설정된 값이 포함된 값이 포함되어있습니다.',
-        solutionMessage: '입력값이 배열(map, set, array)타입이며, 유효한 RFC 3339 날짜 형식만 입력 가능합니다.',
+        solutionMessage:
+            '입력값이 배열(map, set, array)타입이며, 유효한 RFC 3339 날짜 형식만 입력 가능합니다.',
         originDescription: 'Checks if array does not contain any of the given values.',
     },
     arrayNotEmpty: {
         code: 'V6003',
         message: '배열이 비어있습니다.',
-        solutionMessage: '입력값이 배열(map, set, array)타입이며, 배열이 비어있으면 안됩니다. (예: array: [])',
+        solutionMessage:
+            '입력값이 배열(map, set, array)타입이며, 배열이 비어있으면 안됩니다. (예: array: [])',
         originDescription: 'Checks if given array is not empty.',
     },
     arrayMinSize: {
         code: 'V6004',
         message: '배열의 길이가 설정된 길이보다 짧습니다.',
-        solutionMessage: '입력값이 배열(map, set, array)타입이며, 배열의 길이가 조건(min(number))보다 길어야 합니다.',
-        originDescription: "Checks if the array's length is greater than or equal to the specified number.",
+        solutionMessage:
+            '입력값이 배열(map, set, array)타입이며, 배열의 길이가 조건(min(number))보다 길어야 합니다.',
+        originDescription:
+            "Checks if the array's length is greater than or equal to the specified number.",
     },
     arrayMaxSize: {
         code: 'V6005',
         message: '배열의 길이가 설정된 길이보다 깁니다.',
-        solutionMessage: '입력값이 배열(map, set, array)타입이며, 배열의 길이가 조건(min(number))보다 짧아야 합니다.',
+        solutionMessage:
+            '입력값이 배열(map, set, array)타입이며, 배열의 길이가 조건(min(number))보다 짧아야 합니다.',
         originDescription: "Checks if the array's length is less or equal to the specified number.",
     },
     arrayUnique: {
         code: 'V6006',
         message: '배열 중 같은 내용의 요소가 감지되었습니다. 배열 내 모든 유소는 고유해야합니다.',
-        solutionMessage: '입력값이 배열(map, set, array)타입이며, 배열의 모든 요소가 고유(Unique)해야 합니다.',
+        solutionMessage:
+            '입력값이 배열(map, set, array)타입이며, 배열의 모든 요소가 고유(Unique)해야 합니다.',
         originDescription:
             "Checks if all array's values are unique. Comparison for objects is reference-based. Optional function can be speciefied which return value will be used for the comparsion.",
     },
@@ -627,7 +676,8 @@ export const validationErrorCode = {
         code: 'V8001',
         message: '관리자에게 문의하십시오.',
         solutionMessage: '이 부분은 저도 잘 모르겠습니다. -동민-',
-        originDescription: 'Prevent stripping off the property when no other constraint is specified for it.',
+        originDescription:
+            'Prevent stripping off the property when no other constraint is specified for it.',
     },
     //===== 새로 추가된 데코레이터(new decorators) [V9001]부터 시작 =====//
     /*

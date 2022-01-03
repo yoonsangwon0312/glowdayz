@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApplicationType, GoogleRecaptchaModule, GoogleRecaptchaNetwork } from '@nestlab/google-recaptcha';
+import {
+    ApplicationType,
+    GoogleRecaptchaModule,
+    GoogleRecaptchaNetwork,
+} from '@nestlab/google-recaptcha';
 import { IncomingMessage } from 'http';
 import { ConfigModule } from '@nestjs/config';
 import { TestModule } from './test/test.module';
+import { UserModule } from './user/user.module';
 
 @Module({
     imports: [
@@ -29,6 +34,7 @@ import { TestModule } from './test/test.module';
             },
         }),
         TestModule,
+        UserModule,
     ],
     controllers: [],
     providers: [],

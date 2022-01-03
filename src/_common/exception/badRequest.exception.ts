@@ -1,9 +1,17 @@
-import { ArgumentsHost, BadRequestException, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
+import {
+    ArgumentsHost,
+    BadRequestException,
+    Catch,
+    ExceptionFilter,
+    HttpException,
+} from '@nestjs/common';
 import express from 'express';
 import { ServiceCore } from 'src/_common/core/service.core';
 
 @Catch(BadRequestException)
-export class BadRequestExceptionFilter extends ServiceCore implements ExceptionFilter<BadRequestException> {
+export class BadRequestExceptionFilter
+    extends ServiceCore
+    implements ExceptionFilter<BadRequestException> {
     public catch(exception: HttpException, host: ArgumentsHost) {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse() as express.Response;

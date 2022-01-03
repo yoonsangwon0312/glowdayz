@@ -41,5 +41,8 @@ export function preg_quote(str: string, delimiter = null) {
     //   returns 2: '\\*RRRING\\* Hello\\?'
     //   example 3: preg_quote("\\.+*?[^]$(){}=!<>|:")
     //   returns 3: '\\\\\\.\\+\\*\\?\\[\\^\\]\\$\\(\\)\\{\\}\\=\\!\\<\\>\\|\\:'
-    return (str + '').replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'), '\\$&');
+    return (str + '').replace(
+        new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'),
+        '\\$&',
+    );
 }

@@ -6,7 +6,8 @@ export const prismaErrorCode = {
     },
     P1001: {
         code: 'P1001',
-        message: '데이터베이스 서버에 연결할 수 없습니다. {database_host}:{database_port}를 확인하십시오.',
+        message:
+            '데이터베이스 서버에 연결할 수 없습니다. {database_host}:{database_port}를 확인하십시오.',
     },
     P1002: {
         code: 'P1002',
@@ -25,11 +26,13 @@ export const prismaErrorCode = {
     },
     P1009: {
         code: 'P1009',
-        message: '데이터베이스 {database_name}가 {database_host}:{database_port}서버에 이미 있습니다.',
+        message:
+            '데이터베이스 {database_name}가 {database_host}:{database_port}서버에 이미 있습니다.',
     },
     P1010: {
         code: 'P1010',
-        message: '사용자 {database_user}가 데이터베이스에 대한 액세스를 거부했습니다. {database_name}',
+        message:
+            '사용자 {database_user}가 데이터베이스에 대한 액세스를 거부했습니다. {database_name}',
     },
     P1011: {
         code: 'P1011',
@@ -121,11 +124,13 @@ export const prismaErrorCode = {
     },
     P2005: {
         code: 'P2005',
-        message: '{field_value}필드에 대해 데이터베이스에 저장된 값 {field_name}이 필드 유형에 유효하지 않습니다',
+        message:
+            '{field_value}필드에 대해 데이터베이스에 저장된 값 {field_name}이 필드 유형에 유효하지 않습니다',
     },
     P2006: {
         code: 'P2006',
-        message: '제공된 값 {field_value}에 대한 {model_name}필드는 {field_name}이 유효하지 않습니다.',
+        message:
+            '제공된 값 {field_value}에 대한 {model_name}필드는 {field_name}이 유효하지 않습니다.',
     },
     P2007: {
         code: 'P2007',
@@ -153,7 +158,8 @@ export const prismaErrorCode = {
     },
     P2013: {
         code: 'P2013',
-        message: '{argument_name}필드 {field_name}에 대한 필수 인수가 누락되었습니다. {object_name}',
+        message:
+            '{argument_name}필드 {field_name}에 대한 필수 인수가 누락되었습니다. {object_name}',
     },
     P2014: {
         code: 'P2014',
@@ -222,7 +228,8 @@ export const prismaErrorCode = {
     },
     P3001: {
         code: 'P3001',
-        message: '파괴적인 변경 및 데이터 손실 가능성이 있는 마이그레이션 가능: {migration_engine_destructive_details}',
+        message:
+            '파괴적인 변경 및 데이터 손실 가능성이 있는 마이그레이션 가능: {migration_engine_destructive_details}',
     },
     P3002: {
         code: 'P3002',

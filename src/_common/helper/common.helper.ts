@@ -191,11 +191,35 @@ export function base_url(url: string) {
 // }
 // type FindManyWhereType = {};
 
-export function autoFormatWhere<PrismaWhereType = void>(origWhere: Record<string, any>): PrismaWhereType {
-    const filterList = ['equals', 'in', 'notIn', 'lt', 'lte', 'gt', 'gte', 'contains', 'startsWith', 'endsWith'];
+export function autoFormatWhere<PrismaWhereType = void>(
+    origWhere: Record<string, any>,
+): PrismaWhereType {
+    const filterList = [
+        'equals',
+        'in',
+        'notIn',
+        'lt',
+        'lte',
+        'gt',
+        'gte',
+        'contains',
+        'startsWith',
+        'endsWith',
+    ];
     const intFilterList = ['equals', 'in', 'notIn', 'lt', 'lte', 'gt', 'gte'];
     const intListFilterList = ['in', 'notIn'];
-    const stringFilterList = ['equals', 'in', 'notIn', 'lt', 'lte', 'gt', 'gte', 'contains', 'startsWith', 'endsWith'];
+    const stringFilterList = [
+        'equals',
+        'in',
+        'notIn',
+        'lt',
+        'lte',
+        'gt',
+        'gte',
+        'contains',
+        'startsWith',
+        'endsWith',
+    ];
     const stringListFilterList = ['in', 'notIn'];
     const where = {};
     const filterObject = {};

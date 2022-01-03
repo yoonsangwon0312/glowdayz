@@ -15,7 +15,10 @@ export class ServiceCore extends LoggerLibrary {
         const option = {};
         if (origOption) {
             for (const [key, value] of Object.entries(origOption)) {
-                if ((value !== 0 && !value) || (typeof value === 'object' && Object.entries(value).length === 0))
+                if (
+                    (value !== 0 && !value) ||
+                    (typeof value === 'object' && Object.entries(value).length === 0)
+                )
                     continue;
                 option[key] = value;
             }

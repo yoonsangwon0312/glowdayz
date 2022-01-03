@@ -17,13 +17,20 @@ export function rs_htmlclean(data: TransformFnParams) {
         const returnArr = [];
         for (const thisValue of value) {
             if (typeof thisValue !== 'string') {
-                throw new Error(`this key "` + key + `"'s value type is not [String]; obj =` + JSON.stringify(obj));
+                throw new Error(
+                    `this key "` +
+                        key +
+                        `"'s value type is not [String]; obj =` +
+                        JSON.stringify(obj),
+                );
             }
             returnArr.push(encode(thisValue.trim()));
         }
         return returnArr;
     } else {
-        throw new Error(`this key "` + key + `"'s value type is not String; obj =` + JSON.stringify(obj));
+        throw new Error(
+            `this key "` + key + `"'s value type is not String; obj =` + JSON.stringify(obj),
+        );
     }
 }
 
