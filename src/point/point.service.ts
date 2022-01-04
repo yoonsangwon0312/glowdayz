@@ -18,7 +18,6 @@ export class PointService extends ServiceCore {
                 },
             },
         });
-        // const rest_point = thisUser.mem_point + amount;
 
         const result_log = await this.prisma.pOINT.create({
             data: {
