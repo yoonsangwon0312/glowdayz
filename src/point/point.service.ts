@@ -7,13 +7,7 @@ import { ServiceCore } from 'src/_common/core/service.core';
 @Injectable()
 export class PointService extends ServiceCore {
     // ServiceCore를 불러와 prisma를 사용
-    async setIncreasePoint(
-        user_idx: number,
-        memo: string,
-        amount: string,
-        type: string,
-        trg_idx: number,
-    ) {
+    async setIncreasePoint(user_idx: number, memo: string, amount: string, type: string, trg_idx: number) {
         const result = await this.prisma.uSER.update({
             where: {
                 id: user_idx,

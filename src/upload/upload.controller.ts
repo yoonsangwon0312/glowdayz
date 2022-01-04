@@ -45,6 +45,11 @@ export class UploadController {
 
         const splitPhoto = PHOTONAME.split(',');
 
+        if (userData.usr_point < 100 * splitPhoto.length) {
+            const needPoint = 100 * splitPhoto.length - userData.usr_point;
+            console.log(1);
+            return needPoint + '포인트가 부족합니다.';
+        }
         if (splitPhoto.length > 1) {
             _.forEach(splitPhoto, (element) => {
                 const result = this.UploadService.uploadPhoto(
