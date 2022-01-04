@@ -41,3 +41,13 @@ model USER {
   usr_point  Int       @default(0)
   FOLDER     FOLDER[]
 }
+
+model POINT {
+  poi_idx       Int      @id @unique @default(autoincrement())
+  poi_trg_type  String   @db.VarChar(255)
+  poi_trg_idx   Int
+  poi_usr_idx   Int
+  poi_amount    String   @db.VarChar(255)
+  poi_memo      String   @db.VarChar(255)
+  poi_create_et DateTime @db.DateTime(0)
+}

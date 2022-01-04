@@ -1,22 +1,16 @@
-import {
-    Post,
-    Get,
-    UseInterceptors,
-    UploadedFile,
-    Param,
-    Res,
-    Controller,
-    Body,
-    Req,
-    HttpStatus,
-} from '@nestjs/common';
+import { Post, Get, Controller, Body, Req } from '@nestjs/common';
 import { FolderService } from './folder.service';
 import { UserService } from 'src/user/user.service';
+import { PointService } from 'src/point/point.service';
 import _ from 'lodash';
 
 @Controller('Folder')
 export class FolderController {
-    constructor(private FolderService: FolderService, private UserService: UserService) {}
+    constructor(
+        private FolderService: FolderService,
+        private UserService: UserService,
+        private PointService: PointService,
+    ) {}
     @Post('addFolder')
     async addFolder(@Req() req, @Body() body) {
         const { USERNAME, FOLDERNAME } = body;
@@ -28,6 +22,22 @@ export class FolderController {
         }
 
         const result = await this.FolderService.addFolder(FOLDERNAME, userData.id);
+
+        if (result) {
+            try {
+                const getPoint = await this.PointService.setIncreasePoint(
+                    userData.id,
+                    '폴더 생성으로 1000p 지급',
+                    '1000',
+                    'folder',
+                    result.fld_idx,
+                );
+            } catch (e) {
+                if (e) {
+                    return '포인트가 정상지급되지 않았습니다.';
+                }
+            }
+        }
         return result;
     }
 
